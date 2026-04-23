@@ -20,7 +20,7 @@ git config user.name
 git config user.email
 ```
 
-==================================================================
+================================================================
 
 ##Clase 2
 
@@ -39,13 +39,46 @@ git config user.email
 			* git commit -m ""
 			  Despues de add, para que Git indique un punto de guardado
 ####Commits Conventions
+
 Comitear commits atomicos, de max. 50 caracteres en INGLES con el uso de Add, Fix,
 Change y Remove. Usar Prefijos como feat, docs, test, fix, refactor...
 
 ###Comandos nuevos
-	
-	- git restore arch.ext/  / --stage
-	- git reset --soft
-	- git log --online
-	- git commit --amend -m  
+```
+ git restore arch.ext/  / --stage
+ git reset --soft
+ git log --online
+ git commit --amend -m  
+```
+
+================================================================
+
+##Clase 3
+
+###Configurar SSH
+Key para autenticar commits
+```
+ssh -keygen -t ed25519 "correo de uso en github"
+```
+
+Abrir la direccion que devuelve en donde se almaceno la SSH y copiar la SSH dada
+
+En github:
+	- Ir a Settings
+	- Crear nuev SSH
+	- Dar un title
+	- Pegar la SSH
+	- Crear Key
+
+Probar:
+```
+ssh -T git@github.com
+```
+
+###Conectar local con remoto
+```
+git remote add origin git@github:... .git
+git branch -m main
+git push -m origin main
+```
 
