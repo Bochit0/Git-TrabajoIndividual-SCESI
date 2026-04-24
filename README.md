@@ -2,19 +2,19 @@
 
 Jhosua Alejandro Bustillos Calderon
 
-##Clase 1
+## Clase 1
 
-###¿QUE ES GIT?
+### ¿QUE ES GIT?
 
 Sistema de control de versiones
 
-###¿COMO DESCARGAR GIT?
+### ¿COMO DESCARGAR GIT?
 
 ```
 sudo pacman -Sy git
 ```
 
-###¿COMO CONFIGURAR GIT?
+### ¿COMO CONFIGURAR GIT?
 ```
 git config user.name 
 git config user.email
@@ -22,9 +22,9 @@ git config user.email
 
 ================================================================
 
-##Clase 2
+## Clase 2
 
-###States and Commits
+### States and Commits
 
 	- Directorio de Trabajo
 		Git solo observa lo creado y lo cataloga:
@@ -38,12 +38,12 @@ git config user.email
 			  Para que Git conozca lo que se quiere guardar
 			* git commit -m ""
 			  Despues de add, para que Git indique un punto de guardado
-####Commits Conventions
+#### Commits Conventions
 
 Comitear commits atomicos, de max. 50 caracteres en INGLES con el uso de Add, Fix,
 Change y Remove. Usar Prefijos como feat, docs, test, fix, refactor...
 
-###Comandos nuevos
+### Comandos nuevos
 ```
  git restore arch.ext/  / --stage
  git reset --soft
@@ -53,7 +53,7 @@ Change y Remove. Usar Prefijos como feat, docs, test, fix, refactor...
 
 ================================================================
 
-##Clase 3
+## Clase 3
 
 ###Configurar SSH
 Key para autenticar commits
@@ -81,4 +81,45 @@ git remote add origin git@github:... .git
 git branch -m main
 git push -m origin main
 ```
+================================================================
+
+## Clase 4
+
+### Multiples SSH
+
+```
+ssh -keygen -t ed25519 -t "correo" -f "direccion ssh"
+```
+
+Comando para crear otra llave ssh.
+
+Para configurarla, se nesecita crear archivo config y poner:
+```
+#Cuenta Personal
+Host github.com
+	Hostname github.com
+	User git
+	IdentifyFile "direccion de ssh"
+
+#Cuenta Otra
+Host github.nuevo
+	Hostname github.com
+	User git
+	IdentifyFile "direccion de ssh nueva"
+```
+
+### Git Checkout
+
+Permite ver y cambiarse a otros commits pasados.
+```
+git checkout hashDelCommit
+```
+
+Cmd para que el HEAD no apunte a tu rama, si no al commit.
+
+Entramos a un estado Detached
+
+NO pasa nada si se hace un git add y commit al estar en el commit viejo, el commit simplemente no se guarda,
+para guardar es mejor crear una rama para este commit.
+
 
