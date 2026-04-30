@@ -172,3 +172,69 @@ feature/add-new-function
 ```
 
 Tras terminar con una rama FEATURE, es decir, mergear a la rama DEV lo que se hizo en FEATURE, se debe de borrar dicha RAMA.
+
+================================================================
+
+## Clase 6
+
+### Trabajar en Ramas
+
+```
+git merge
+```
+Permite fusionar nuestras ramas.
+
+```
+git fetch
+```
+Permite ver si hubo cambios en la rama y sus ramas hijas, tambien actualiza si es que se crearon nuevas ramas.
+
+```
+git pull
+```
+Permite traer todos los cambios que tiene el repositorio remoto de esa rama.
+
+```
+git push
+```
+Sube tus cambios al repositorio remoto de esa rama.
+
+### Flujos de Trabajo
+
+#### Sin Pull Request
+git checkout develop
+git fetch
+git pull origin develop
+git checkout rama # Agregas -b si estás creando la rama
+git merge develop # Solo si hubo cambios en develop
+# Trabajas en tu rama
+git push origin rama # Agregas -u si es la primera vez que subes cambios al repositorio remoto
+git checkout develop
+git fetch
+git pull origin develop
+git merge –no-ff rama
+# Resuelves manualmente los archivos fallidos y sus conflictos
+git add .
+git commit
+[Ctrl + O, Enter, Ctrl + X](depende si usan nano)
+git branch -D rama
+git push origin develop
+
+#### Con Pull Request
+git checkout develop
+git fetch
+git pull origin develop
+git checkout rama # Agregas -b si estás creando la rama
+git merge develop # Solo si hubo cambios en develop
+# Trabajas en tu rama
+git push origin rama # Agregas -u si es la primera vez que subes cambios al repositorio remoto
+git checkout develop
+git fetch
+git pull origin develop
+git merge –no-ff rama
+# Resuelves manualmente los archivos fallidos y sus conflictos
+git add .
+git commit
+[Ctrl + O, Enter, Ctrl + X](depende si usan nano)
+git branch -D rama
+git push origin develop
