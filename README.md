@@ -122,4 +122,53 @@ Entramos a un estado Detached
 NO pasa nada si se hace un git add y commit al estar en el commit viejo, el commit simplemente no se guarda,
 para guardar es mejor crear una rama para este commit.
 
+================================================================
 
+## Clase 5
+
+### Ramas
+
+Comandos necesarios:
+
+```
+git branch
+```
+Para ver en que rama te encuentras.
+```
+git branch feature/example
+```
+Crear una rama a partir de main.
+
+```
+git branch -D nombre-rama
+```
+Elimnar una rama.
+
+```
+git checkout
+```
+Verificar estado de la rama actual.
+
+```
+git checkout -b nombre-rama
+```
+Crear una nueva rama y cambiarse a esa rama a la vez.
+
+```
+git switch
+```
+Cambiar rama
+
+### Un poco de Git Flow
+
+La rama MAIN, solo debe contener codigo que funciona teniendo solo un commt inicial.
+
+La rama DEV tiene codigo en pre-produccion y de ésta rama salen las otras ramas.
+
+Una rama FEATURE contiene una nueva caracterisitca/funcionalidad del programa o sistema.
+
+```
+feature/add-new-function
+```
+
+Tras terminar con una rama FEATURE, es decir, mergear a la rama DEV lo que se hizo en FEATURE, se debe de borrar dicha RAMA.
